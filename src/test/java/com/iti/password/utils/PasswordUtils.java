@@ -15,6 +15,7 @@ public class PasswordUtils {
     public static final String INVALID_PASSWORD_5 = "AbTp9!foo";
     public static final String INVALID_PASSWORD_6 = "AbTp9!foA";
     public static final String INVALID_PASSWORD_7 = "AbTp9 fok";
+    public static final String INVALID_PASSWORD_8 = "AbTp9 fok!";
 
     public static Password createMockPassword(String password) {
         return new Password.PasswordBuilder()

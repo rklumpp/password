@@ -2,7 +2,10 @@ package com.iti.password.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import java.util.Arrays;
+import java.util.Map;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 /**
  * @implNote Password - the Password itself when instantiated run the determined rules
@@ -39,7 +42,10 @@ public class Password {
             this.isValid = this.value.length() >= 9
                                 && this.hasDigit()
                                 && this.hasUppercase()
-                                && this.hasDowncase();
+                                && this.hasDowncase()
+                                && this.hasSpecialChars()
+                                && this.hasRepeatedChars()
+                                && this.hasNoSpaces();
             return this;
         }
 
@@ -69,6 +75,41 @@ public class Password {
             Pattern pattern = Pattern.compile("([a-z])+");
             return pattern.matcher(this.value).find();
         }
+
+        /**
+         * Checks for a Special character at Password value
+         * @return Boolean
+         */
+        private Boolean hasSpecialChars() {
+            Pattern pattern = Pattern.compile("[!@#$%^&*(),.?\":{}|<>~;]");
+            return pattern.matcher(this.value).find();
+        }
+
+        /**
+         * Checks for character repetition at Password value
+         * @return Boolean
+         */
+        private Boolean hasRepeatedChars() {
+            String[] arr = this.value.split("");
+            Map<String, Long> map = Arrays.asList(arr).stream()
+                    .collect(Collectors.groupingBy(s -> s, Collectors.counting()));
+
+            long count = map.entrySet().stream()
+                    .filter(e -> e.getValue() > 1)
+                    .count();
+
+            return count == 0;
+        }
+
+        /**
+         * Checks for spaces at Password value
+         * @return Boolean
+         */
+        private Boolean hasNoSpaces() {
+            Pattern pattern = Pattern.compile("[\\s]");
+            return !pattern.matcher(this.value).find();
+        }
+
 
         /**
          * @implNote When Password is built validations are checked

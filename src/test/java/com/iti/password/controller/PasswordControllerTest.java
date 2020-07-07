@@ -53,4 +53,122 @@ public class PasswordControllerTest {
                 .andExpect(MockMvcResultMatchers.jsonPath("$.valid").value(Boolean.TRUE));
     }
 
+    @Test
+    public void postController_whenInvalidPassword01_thenReturnInvalidPassword() throws Exception {
+        String password = PasswordUtils.INVALID_PASSWORD_1;
+        given(service.apply(password))
+                .willReturn(PasswordUtils.createMockPassword(password));
+
+        mockMvc.perform(
+                post(PasswordController.BASE_URL)
+                        .contentType(MediaType.TEXT_PLAIN_VALUE)
+                        .content(password))
+                .andExpect(status().isBadRequest());
+    }
+
+    @Test
+    public void postController_whenInvalidPassword02_thenReturnInvalidPassword() throws Exception {
+        String password = PasswordUtils.INVALID_PASSWORD_2;
+        given(service.apply(password))
+                .willReturn(PasswordUtils.createMockPassword(password));
+
+        mockMvc.perform(
+                post(PasswordController.BASE_URL)
+                        .contentType(MediaType.TEXT_PLAIN_VALUE)
+                        .content(password))
+                .andExpect(status().isAccepted())
+                .andExpect(jsonPath("$.valid").exists())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.valid").value(Boolean.FALSE));
+    }
+
+    @Test
+    public void postController_whenInvalidPassword03_thenReturnInvalidPassword() throws Exception {
+        String password = PasswordUtils.INVALID_PASSWORD_3;
+        given(service.apply(password))
+                .willReturn(PasswordUtils.createMockPassword(password));
+
+        mockMvc.perform(
+                post(PasswordController.BASE_URL)
+                        .contentType(MediaType.TEXT_PLAIN_VALUE)
+                        .content(password))
+                .andExpect(status().isAccepted())
+                .andExpect(jsonPath("$.valid").exists())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.valid").value(Boolean.FALSE));
+    }
+
+    @Test
+    public void postController_whenInvalidPassword04_thenReturnInvalidPassword() throws Exception {
+        String password = PasswordUtils.INVALID_PASSWORD_4;
+        given(service.apply(password))
+                .willReturn(PasswordUtils.createMockPassword(password));
+
+        mockMvc.perform(
+                post(PasswordController.BASE_URL)
+                        .contentType(MediaType.TEXT_PLAIN_VALUE)
+                        .content(password))
+                .andExpect(status().isAccepted())
+                .andExpect(jsonPath("$.valid").exists())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.valid").value(Boolean.FALSE));
+    }
+
+    @Test
+    public void postController_whenInvalidPassword05_thenReturnInvalidPassword() throws Exception {
+        String password = PasswordUtils.INVALID_PASSWORD_5;
+        given(service.apply(password))
+                .willReturn(PasswordUtils.createMockPassword(password));
+
+        mockMvc.perform(
+                post(PasswordController.BASE_URL)
+                        .contentType(MediaType.TEXT_PLAIN_VALUE)
+                        .content(password))
+                .andExpect(status().isAccepted())
+                .andExpect(jsonPath("$.valid").exists())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.valid").value(Boolean.FALSE));
+    }
+
+    @Test
+    public void postController_whenInvalidPassword06_thenReturnInvalidPassword() throws Exception {
+        String password = PasswordUtils.INVALID_PASSWORD_6;
+        given(service.apply(password))
+                .willReturn(PasswordUtils.createMockPassword(password));
+
+        mockMvc.perform(
+                post(PasswordController.BASE_URL)
+                        .contentType(MediaType.TEXT_PLAIN_VALUE)
+                        .content(password))
+                .andExpect(status().isAccepted())
+                .andExpect(jsonPath("$.valid").exists())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.valid").value(Boolean.FALSE));
+    }
+
+    @Test
+    public void postController_whenInvalidPassword07_thenReturnInvalidPassword() throws Exception {
+        String password = PasswordUtils.INVALID_PASSWORD_7;
+        given(service.apply(password))
+                .willReturn(PasswordUtils.createMockPassword(password));
+
+        mockMvc.perform(
+                post(PasswordController.BASE_URL)
+                        .contentType(MediaType.TEXT_PLAIN_VALUE)
+                        .content(password))
+                .andExpect(status().isAccepted())
+                .andExpect(jsonPath("$.valid").exists())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.valid").value(Boolean.FALSE));
+    }
+
+    @Test
+    public void postController_whenInvalidPassword08_thenReturnInvalidPassword() throws Exception {
+        String password = PasswordUtils.INVALID_PASSWORD_8;
+        given(service.apply(password))
+                .willReturn(PasswordUtils.createMockPassword(password));
+
+        mockMvc.perform(
+                post(PasswordController.BASE_URL)
+                        .contentType(MediaType.TEXT_PLAIN_VALUE)
+                        .content(password))
+                .andExpect(status().isAccepted())
+                .andExpect(jsonPath("$.valid").exists())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.valid").value(Boolean.FALSE));
+    }
+
 }
