@@ -40,13 +40,14 @@ public class PasswordControllerTest {
 
     @Test
     public void postController_whenValidPassword_thenReturnSuccessValidPassword() throws Exception {
-        given(service.apply(PasswordUtils.VALID_PASSWORD))
-                .willReturn(PasswordUtils.createValidMockPassword());
+        String password = PasswordUtils.VALID_PASSWORD;
+        given(service.apply(password))
+                .willReturn(PasswordUtils.createMockPassword(password));
 
         mockMvc.perform(
                 post(PasswordController.BASE_URL)
                         .contentType(MediaType.TEXT_PLAIN_VALUE)
-                        .content(PasswordUtils.VALID_PASSWORD))
+                        .content(password))
                 .andExpect(status().isAccepted())
                 .andExpect(jsonPath("$.valid").exists())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.valid").value(Boolean.TRUE));
