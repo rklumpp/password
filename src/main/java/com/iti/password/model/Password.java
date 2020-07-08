@@ -20,6 +20,7 @@ public class Password {
     private Password(PasswordBuilder builder) {
         this.value = builder.value;
         this.isValid = builder.isValid;
+
     }
 
     public Boolean isValid() {
@@ -47,6 +48,15 @@ public class Password {
                                 && this.hasRepeatedChars()
                                 && this.hasNoSpaces();
             return this;
+        }
+
+        /**
+         * @implNote When Password is built validations are checked
+         * @return Password
+         */
+        public Password build() {
+            this.isValid();
+            return new Password(this);
         }
 
         /**
@@ -110,15 +120,6 @@ public class Password {
             return !pattern.matcher(this.value).find();
         }
 
-
-        /**
-         * @implNote When Password is built validations are checked
-         * @return Password
-         */
-        public Password build() {
-            this.isValid();
-            return new Password(this);
-        }
     }
 
 }
