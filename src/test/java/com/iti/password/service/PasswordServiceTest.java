@@ -36,7 +36,7 @@ public class PasswordServiceTest {
     }
 
     @Test
-    public void testApplyPassword_whenInvalid_thenReturnInvalidPassword01() {
+    public void testApplyPassword_whenInvalid01_thenReturnInvalidPassword() {
         String stringPassword = PasswordUtils.INVALID_PASSWORD_1;
 
         when(service.apply(stringPassword))
@@ -48,7 +48,7 @@ public class PasswordServiceTest {
     }
 
     @Test
-    public void testApplyPassword_whenInvalid_thenReturnInvalidPassword02() {
+    public void testApplyPassword_whenInvalid02_thenReturnInvalidPassword() {
         String stringPassword = PasswordUtils.INVALID_PASSWORD_2;
 
         when(service.apply(stringPassword))
@@ -60,7 +60,7 @@ public class PasswordServiceTest {
     }
 
     @Test
-    public void testApplyPassword_whenInvalid_thenReturnInvalidPassword03() {
+    public void testApplyPassword_whenInvalid03_thenReturnInvalidPassword() {
         String stringPassword = PasswordUtils.INVALID_PASSWORD_3;
 
         when(service.apply(stringPassword))
@@ -72,7 +72,7 @@ public class PasswordServiceTest {
     }
 
     @Test
-    public void testApplyPassword_whenInvalid_thenReturnInvalidPassword04() {
+    public void testApplyPassword_whenInvalid04_thenReturnInvalidPassword() {
         String stringPassword = PasswordUtils.INVALID_PASSWORD_4;
 
         when(service.apply(stringPassword))
@@ -84,7 +84,7 @@ public class PasswordServiceTest {
     }
 
     @Test
-    public void testApplyPassword_whenInvalid_thenReturnInvalidPassword05() {
+    public void testApplyPassword_whenInvalid05_thenReturnInvalidPassword() {
         String stringPassword = PasswordUtils.INVALID_PASSWORD_5;
 
         when(service.apply(stringPassword))
@@ -96,7 +96,7 @@ public class PasswordServiceTest {
     }
 
     @Test
-    public void testApplyPassword_whenInvalid_thenReturnInvalidPassword06() {
+    public void testApplyPassword_whenInvalid06_thenReturnInvalidPassword() {
         String stringPassword = PasswordUtils.INVALID_PASSWORD_6;
 
         when(service.apply(stringPassword))
@@ -108,7 +108,7 @@ public class PasswordServiceTest {
     }
 
     @Test
-    public void testApplyPassword_whenInvalid_thenReturnInvalidPassword07() {
+    public void testApplyPassword_whenInvalid07_thenReturnInvalidPassword() {
         String stringPassword = PasswordUtils.INVALID_PASSWORD_7;
 
         when(service.apply(stringPassword))
@@ -120,7 +120,7 @@ public class PasswordServiceTest {
     }
 
     @Test
-    public void testApplyPassword_whenInvalid_thenReturnInvalidPassword08() {
+    public void testApplyPassword_whenInvalid08_thenReturnInvalidPassword() {
         String stringPassword = PasswordUtils.INVALID_PASSWORD_8;
 
         when(service.apply(stringPassword))
