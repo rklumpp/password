@@ -64,6 +64,14 @@ http://localhost:8080/swagger-ui.html
   - 1 - Create Password - (POST - http://localhost:8080/password) pass
   String password as RequestBody
 
+### About the Solution ###
+The Password itself when built run the necessary validations rules to be acceptable 
+
+If the Password is valid then, the attribute "valid" will be set as Boolean TRUE
+
+All rules are encapsulated on creational pattern
+
+Creational pattern used: Builder 
 ### Credits ###
 
 Raul Klumpp <raulklumpp@gmail.com>
